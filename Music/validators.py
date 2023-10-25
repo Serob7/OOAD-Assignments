@@ -1,5 +1,4 @@
 from functools import wraps
-import re
 
 
 def not_empty_string(field_name, position):
@@ -25,36 +24,6 @@ def positive_number_checker(field_name, position):
         return wrapper
     return decorator
 
-def email_checker(field_name, position):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            value = args[position]
-            email_regex = r'^[a-zA-Z0-9_.+=-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-            if not re.match(email_regex, value):
-                raise ValueError(f"Fill in valid email address in {field_name} field")
-            return func(*args, **kwargs)
-        return wrapper
-    return decorator
 
-def positive_integer_checker(field_name, position):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            value = args[position]
-            if not isinstance(value, int) and value < 0:
-                raise ValueError(f"{field_name} should be positive integer")
-            return func(*args, **kwargs)
-        return wrapper
-    return decorator
 
-def is_class_instance(cls, position):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            value = args[position]
-            if not isinstance(value, cls):
-                raise TypeError(f"Please enter {cls} object")
-            return func(*args, **kwargs)
-        return wrapper
-    return decorator
+
