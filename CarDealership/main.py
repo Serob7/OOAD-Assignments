@@ -32,7 +32,8 @@ def main():
     salesman.view_sale_history()
     print(f"Salesman's salary: ${salesman.salary}")
 
-main()
+if __name__ == '__main__':
+    main()
 
 
 
