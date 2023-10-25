@@ -14,6 +14,7 @@ class Salesman:
         self.name = name
         self.commission_rate = commission_rate
         self.sale_history = []
+        self.salary = 0
 
     def view_sale_history(self):
         for sale in self.sale_history:

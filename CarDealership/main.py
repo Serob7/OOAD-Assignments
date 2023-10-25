@@ -27,10 +27,10 @@ def main():
     customer1.purchase_car(inventory, electric1, salesman)
     print('\n')
 
-    #View salesman's history
+    #View salesman's history and salary
     print("Salesman's history")
     salesman.view_sale_history()
-
+    print(f"Salesman's salary: ${salesman.salary}")
 
 main()
 

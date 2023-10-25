@@ -19,5 +19,6 @@ class Customer:
             print(f"{self.name} purchased {car.make} {car.model} for {car.price} from {salesman.name}")
             inventory.car_inventory.remove(car)
             salesman.sale_history.append(car)
+            salesman.salary += (salesman.commission_rate * float(car.price)) / 100
         else:
             print(f"There are no {car.make} {car.model}s in {inventory.name}")
